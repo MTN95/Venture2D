@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{9fce6f80-2873-468f-ac64-f4c2002928ee}</ProjectGuid>
+    <RootNamespace>Venture2D</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Venture2D</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SOLUTION_DIR=R"($(SolutionDir))";_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2main.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\lib;</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SOLUTION_DIR=R"($(SolutionDir))";NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>X:\Programming\CPP\Venture2D\Venture2D;$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2main.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\lib;</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ECS\Components\BoxCollisionComponent.cpp" />
+    <ClCompile Include="ECS\Components\InputMovementComponent.cpp" />
+    <ClCompile Include="ECS\Components\TransformComponent.cpp" />
+    <ClCompile Include="ECS\Entity.cpp" />
+    <ClCompile Include="ECS\EntityManager.cpp" />
+    <ClCompile Include="Graphics\Button.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Graphics\Sprite.cpp" />
+    <ClCompile Include="ECS\Components\ShapeComponent.cpp" />
+    <ClCompile Include="Shapes\RectangleShape.cpp" />
+    <ClCompile Include="States\GameStates\GameOverState.cpp" />
+    <ClCompile Include="States\GameStates\GameWonState.cpp" />
+    <ClCompile Include="Input\InputManager.cpp" />
+    <ClCompile Include="States\GameStates\IntroState.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="States\GameStates\MenuState.cpp" />
+    <ClCompile Include="States\GameStates\OutroState.cpp" />
+    <ClCompile Include="States\GameStates\PauseState.cpp" />
+    <ClCompile Include="States\GameStates\PlayState.cpp" />
+    <ClCompile Include="Graphics\TextRenderer.cpp" />
+    <ClCompile Include="Graphics\Texture.cpp" />
+    <ClCompile Include="Util\Log.cpp" />
+    <ClCompile Include="Util\Timer.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Collision\ContactListener.hpp" />
+    <ClInclude Include="ECS\Components\BoxCollisionComponent.hpp" />
+    <ClInclude Include="ECS\Components\InputMovementComponent.hpp" />
+    <ClInclude Include="ECS\Components\TransformComponent.hpp" />
+    <ClInclude Include="ECS\Entity.hpp" />
+    <ClInclude Include="ECS\EntityManager.hpp" />
+    <ClInclude Include="ECS\IComponent.hpp" />
+    <ClInclude Include="Shapes\IShape.hpp" />
+    <ClInclude Include="Math\Vec2D.h" />
+    <ClInclude Include="Graphics\Button.hpp" />
+    <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Graphics\Sprite.hpp" />
+    <ClInclude Include="ECS\Components\ShapeComponent.hpp" />
+    <ClInclude Include="Shapes\RectangleShape.hpp" />
+    <ClInclude Include="States\GameStates\GameOverState.hpp" />
+    <ClInclude Include="States\GameStates\GameWonState.hpp" />
+    <ClInclude Include="Input\InputManager.hpp" />
+    <ClInclude Include="States\GameStates\IntroState.hpp" />
+    <ClInclude Include="States\IState.hpp" />
+    <ClInclude Include="States\GameStates\MenuState.hpp" />
+    <ClInclude Include="States\GameStates\IGameState.hpp" />
+    <ClInclude Include="States\GameStates\OutroState.hpp" />
+    <ClInclude Include="States\GameStates\PauseState.hpp" />
+    <ClInclude Include="States\GameStates\PlayState.hpp" />
+    <ClInclude Include="Graphics\TextRenderer.hpp" />
+    <ClInclude Include="Graphics\Texture.hpp" />
+    <ClInclude Include="States\GameStates\GameStates.hpp" />
+    <ClInclude Include="Util\ColorMacros.hpp" />
+    <ClInclude Include="Util\Common.hpp" />
+    <ClInclude Include="Util\Log.hpp" />
+    <ClInclude Include="Math\Math.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

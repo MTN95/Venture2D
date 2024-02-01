@@ -1,0 +1,8 @@
+Package: glm
+Version: 2023-06-08
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 86c23bd0cff3b73b6286b96cefc70b95f46aabe96a8ac96bd8faaf8d93c33e24
+Description: OpenGL Mathematics (GLM)
+Status: purge ok not-installed

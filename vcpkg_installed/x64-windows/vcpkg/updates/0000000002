@@ -1,0 +1,10 @@
+Package: freetype
+Version: 2.12.1
+Port-Version: 4
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 734e834e4e2a323fc650b558b0e19619b2a2892cdad0047a7921693045c27216
+Description: A library to render fonts.
+Default-Features: brotli, bzip2, png, zlib
+Status: purge ok half-installed

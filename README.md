@@ -69,7 +69,7 @@ This involves configuring the environment to match the dependencies and settings
 
     Clone the Repository: git clone [[repo-link]](https://github.com/MTN95/Venture2D)
     Navigate to Project Directory
-    Build the Project
+    Build the Project Using Visual studio community (ctrl+shift+b)
 
 ### <div align="center">Final Notes</div>
 
